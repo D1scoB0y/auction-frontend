@@ -5,8 +5,7 @@ import formatPrice from "../../../helpers/priceFormatter"
 import { Link } from "react-router-dom"
 import clsx from "clsx"
 import Timer from "../../../components/Timer/Timer"
-import { timezoneOffset } from "../../../helpers/timeFormatter"
-import moment from "moment"
+import formatDate from "../../../helpers/dateFormatter"
 
 
 const Bid: FC<{ bid: UserBid }> = ({
@@ -60,12 +59,8 @@ const Bid: FC<{ bid: UserBid }> = ({
                     )}
 
                     <span className={styles.endDate}>
-                        {moment(Date.parse(bid.lotEndDate) - timezoneOffset()).format(
-                            'DD.MM.YYYY H:mm',
-                        )}
+                        {formatDate(bid.lotEndDate)}
                     </span>
-
-                    
                 </div>
             </div>
         </Link>

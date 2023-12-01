@@ -47,12 +47,10 @@ const FileDropzone: FC<Props> = ({
         setDrag(false)
         setIsLoading(true)
 
-        const maxSize = 1024 ** 2 * 4
-
         for (const file of e.dataTransfer.files) {
-            if (file.size > maxSize) {
+            if (file.size > import.meta.env.VITE_MAX_FILE_SIZE) {
                 setDrag(true)
-                setDragError('Максимальный вес одного файла - 4 MB')
+                setDragError('Максимальный вес одного файла - 8 MB')
 
                 setTimeout(() => {
                     setDrag(false)
@@ -72,46 +70,48 @@ const FileDropzone: FC<Props> = ({
     }
 
     return (
-        <div
-            className={clsx(
-                styles.dropzone,
-                drag && styles.dropzoneDragged,
-                dragError && styles.dropzoneError,
-            )}
-        >
+        <>
             <div
-                className={styles.dropzoneOverlay}
-                onDragStart={e => handleDragStart(e)}
-                onDragLeave={e => handleDragLeave(e)}
-                onDragOver={e => handleDragStart(e)}
-                onDrop={e => handleDrop(e)}
-            />
+                className={clsx(
+                    styles.dropzone,
+                    drag && styles.dropzoneDragged,
+                    dragError && styles.dropzoneError,
+                )}
+            >
+                <div
+                    className={styles.dropzoneOverlay}
+                    onDragStart={e => handleDragStart(e)}
+                    onDragLeave={e => handleDragLeave(e)}
+                    onDragOver={e => handleDragStart(e)}
+                    onDrop={e => handleDrop(e)}
+                />
 
-            {drag ? (
-                <>
-                    {dragError ? (
-                        <span className={styles.dropzoneHint}>{dragError}</span>
-                    ) : (
-                        <span className={styles.dropzoneHint}>+ Файл</span>
-                    )}
-                </>
-            ) : (
-                <>
-                    {isLoading ? (
-                        <Spinner />
-                    ) : (
-                        <div className={styles.dropzoneHintContainer}>
-                            <span className={styles.dropzoneHint}>
-                                Перетащите файлы для загрузки
-                            </span>
-                            <span className={styles.dropzoneSmallHint}>
-                                Форматы: jpg, png
-                            </span>
-                        </div>
-                    )}
-                </>
-            )}
-        </div>
+                {drag ? (
+                    <>
+                        {dragError ? (
+                            <span className={styles.dropzoneHint}>{dragError}</span>
+                        ) : (
+                            <span className={styles.dropzoneHint}>+ Файл</span>
+                        )}
+                    </>
+                ) : (
+                    <>
+                        {isLoading ? (
+                            <Spinner />
+                        ) : (
+                            <div className={styles.dropzoneHintContainer}>
+                                <span className={styles.dropzoneHint}>
+                                    Перетащите файлы для загрузки
+                                </span>
+                                <span className={styles.dropzoneSmallHint}>
+                                    Форматы: jpg, png
+                                </span>
+                            </div>
+                        )}
+                    </>
+                )}
+            </div>
+        </>
     )
 }
 

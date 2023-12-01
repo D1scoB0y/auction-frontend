@@ -1,0 +1,58 @@
+.badge{
+    width: 100%;
+    background: #fff1b4;
+    padding: 12px 16px;
+    border-radius: 8px;
+}
+
+.beta{
+    font-size: 16px;
+    font-weight: 500;
+    color: #7D5A00;
+}
+
+.support{
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: #7D5A00;
+}
+
+.supportContainer{
+    margin-top: 12px;
+}
+
+.supportEmail{
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #7D5A00;
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+	.badge{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 48px;
+        padding: 0 24px;
+    }
+
+    .supportEmail{
+        padding-left: 6px;
+    }
+
+    .supportContainer{
+        display: flex;
+        margin-top: 0;
+    }
+
+    .support{
+        font-size: 14px;
+    }
+
+    .supportEmail{
+        font-size: 15px;
+    }
+}

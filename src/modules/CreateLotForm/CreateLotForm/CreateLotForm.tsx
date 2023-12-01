@@ -3,6 +3,7 @@ import FileDropzone from "../components/FileDropzone/FileDropzone"
 import styles from './CreateLotForm.module.css'
 import LotInfoForm from "../components/LotInfoForm/LotInfoForm"
 import ImagePreviews from "../components/ImagePreviews/ImagePreviews"
+import FileUploader from "../components/FileUploader/FileUploader"
 
 
 const CreateLotForm = () => {
@@ -13,6 +14,12 @@ const CreateLotForm = () => {
         <div className={styles.newLotFormContainer}>
             <div>
                 <FileDropzone
+                    loadedFilesQty={files.length}
+                    setFiles={setFiles}
+                    setPreviews={setPreviews}
+                />
+
+                <FileUploader
                     loadedFilesQty={files.length}
                     setFiles={setFiles}
                     setPreviews={setPreviews}

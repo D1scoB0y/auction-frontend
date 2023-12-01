@@ -1,14 +1,13 @@
 import { Dispatch, FC, SetStateAction } from 'react'
 import { EndedLot as EndedLotType } from '../../../../types/auction'
 import styles from './EndedLot.module.css'
-import moment from 'moment'
-import { timezoneOffset } from '../../../../helpers/timeFormatter'
 import clsx from 'clsx'
 import Button from '../../../../UI/Button/Button'
 import { Link } from 'react-router-dom'
 import archiveLot from '../../api/archiveLot'
 import { useUserContext } from '../../../../context/UserContext'
 import { useSnackbarContext } from '../../../../context/SnackbarContext'
+import formatDate from '../../../../helpers/dateFormatter'
 
 
 interface Props {
@@ -51,9 +50,7 @@ const EndedLot: FC<Props> = ({
                 <span className={styles.title}>{lot.title}</span>
 
                 <span className={styles.endDate}>
-                    Дата закрытия: {moment(
-                        Date.parse(lot.endDate) - timezoneOffset(),
-                    ).format('DD.MM.YYYY H:mm')}
+                    Дата закрытия: {formatDate(lot.endDate)}
                 </span>
                 
                 <span

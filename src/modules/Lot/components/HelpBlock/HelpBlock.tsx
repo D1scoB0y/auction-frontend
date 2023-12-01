@@ -8,19 +8,13 @@ const HelpBlock = () => {
             <span className={styles.label}>Есть вопросы по лоту?</span>
 
             <span className={styles.mediaOption}>
-                Telegram:<a
+                Email:<a
                     href="https://t.me/discoboy1337"
                     className={styles.mediaHref}
                 >
-                    https://t.me/discoboy1337
+                    seller@example.com
                 </a>
             </span>
-            <img
-                src="/seller_tg_qr.png"
-                alt="qr code"
-                className={styles.qrcode}
-            />
-
         </div>
     )
 }

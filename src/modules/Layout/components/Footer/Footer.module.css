@@ -35,6 +35,26 @@
     color: var(--muted-text);
 }
 
+.supportContainer{
+    margin-top: 14px;
+}
+
+.support{
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted-text);
+}
+
+.supportEmail{
+    display: block;
+    margin-top: 2px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--muted-text);
+    text-decoration: underline;
+}
+
 @media screen and (min-width: 480px) {
 	.innerFooter  {
 		padding: 24px 24px;
@@ -45,6 +65,15 @@
     .innerFooter  {
 		padding: 24px 36px;
 	}
+
+    .supportContainer{
+        display: flex;
+    }
+
+    .supportEmail{
+        margin-top: 0;
+        padding-left: 8px;
+    }
 }
 
 @media screen and (min-width: 1024px) {

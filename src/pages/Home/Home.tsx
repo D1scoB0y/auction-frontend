@@ -5,6 +5,7 @@ import LotsGrid from "../../UI/LotsGrid/LotsGrid"
 import PageMetaInfo from "../../components/PageMetaInfo/PageMetaInfo"
 import styles from './Home.module.css'
 import Pagination from "../../components/Pagination/Pagination"
+import BetaTestingBadge from "../../UI/BetaTestingBadge/BetaTestingBadge"
 
 
 const LOTS_PER_PAGE = 15
@@ -36,6 +37,7 @@ const Home = () => {
             />
 
             <div className="content">
+                <BetaTestingBadge />
                 {lots?.length ? (
                     <>
                         <LotsGrid lots={lots} />

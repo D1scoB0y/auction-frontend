@@ -4,10 +4,9 @@ import getEndedLotBids from '../api/getEndedLot'
 import { useUserContext } from '../../../context/UserContext'
 import { EndedLot as EndedLotType } from '../../../types/auction'
 import styles from './EndedLot.module.css'
-import moment from 'moment'
-import { timezoneOffset } from '../../../helpers/timeFormatter'
 import clsx from 'clsx'
 import formatPrice from '../../../helpers/priceFormatter'
+import formatDate from '../../../helpers/dateFormatter'
 
 
 const EndedLot: FC<{ id: string }> = ({
@@ -47,9 +46,7 @@ const EndedLot: FC<{ id: string }> = ({
                 <span className={styles.title}>{lot.title}</span>
 
                 <span className={styles.endDate}>
-                    Дата закрытия: {moment(Date.parse(lot.endDate) - timezoneOffset()).format(
-                        'DD.MM.YYYY H:mm',
-                    )}
+                    Дата закрытия: {formatDate(lot.endDate)}
                 </span>
 
                 <span className={styles.place}>Место {bids[bidPage].place} / {bids.length}</span>

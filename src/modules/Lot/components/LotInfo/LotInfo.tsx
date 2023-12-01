@@ -3,10 +3,9 @@ import { Lot } from "../../../../types/auction"
 import styles from './LotInfo.module.css'
 import Line from "../../../../UI/Line/Line"
 import Timer from "../../../../components/Timer/Timer"
-import moment from "moment"
-import { timezoneOffset } from "../../../../helpers/timeFormatter"
 import BidForm from "../BidForm/BidForm"
 import formatPrice from "../../../../helpers/priceFormatter"
+import formatDate from "../../../../helpers/dateFormatter"
 
 
 const LotInfo: FC<{ lot: Lot }> = ({
@@ -39,9 +38,7 @@ const LotInfo: FC<{ lot: Lot }> = ({
             )}
 
             <span className={styles.endDate}>
-                Дата закрытия: {moment(Date.parse(lot.endDate) - timezoneOffset()).format(
-                    'DD.MM.YYYY H:mm',
-                )}
+                Дата закрытия: {formatDate(lot.endDate)}
             </span>
 
             {timer > 0 && (

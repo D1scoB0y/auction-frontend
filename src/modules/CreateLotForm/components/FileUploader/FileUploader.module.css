@@ -1,0 +1,24 @@
+.fileUploaderLabel{
+    display: block;
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--blue);
+    cursor: pointer;
+}
+
+.fileUploaderLabel:hover{
+    color: var(--hovered-blue);
+}
+
+.fileUploader{
+    display: none;
+}
+
+.error{
+    display: block;
+    margin-top: 2px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--red);
+}
