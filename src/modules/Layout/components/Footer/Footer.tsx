@@ -10,7 +10,6 @@ const Footer = () => {
                 <div className={styles.footerSections}>
                     <Link
                         to="/"
-                        rel="nofollow"
                         className={styles.footerSection}
                     >
                         Главная

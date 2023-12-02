@@ -6,6 +6,7 @@ import PageMetaInfo from "../../components/PageMetaInfo/PageMetaInfo"
 import styles from './Home.module.css'
 import Pagination from "../../components/Pagination/Pagination"
 import BetaTestingBadge from "../../UI/BetaTestingBadge/BetaTestingBadge"
+import { useUserContext } from "../../context/UserContext"
 
 
 const LOTS_PER_PAGE = 15
@@ -15,9 +16,13 @@ const Home = () => {
     const [page, setPage] = useState<number>(1)
     const [lotsQty, setLotQty] = useState<number>(0)
 
+    const {
+        token,
+    } = useUserContext()
+
     useEffect(() => {
         (async () => {
-            const res = await AuctionService.getLots(page)
+            const res = await AuctionService.getLots(page, token)
 
             if (res) {
                 setLotQty(res.lotsQty)

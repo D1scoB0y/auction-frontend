@@ -33,6 +33,7 @@ export interface LotPreview {
     timeToEnd: number
     image: string
     status: string
+    isInFavorites: boolean
 }
 
 export interface CreateLot {

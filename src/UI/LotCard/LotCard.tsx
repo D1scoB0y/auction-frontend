@@ -2,8 +2,10 @@ import { FC, useState } from 'react'
 import styles from './LotCard.module.css'
 import { LotPreview } from '../../types/auction'
 import Timer from '../../components/Timer/Timer'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import formatPrice from '../../helpers/priceFormatter'
+import { useUserContext } from '../../context/UserContext'
+import AuctionService from '../../api/AuctionService'
 
 
 interface Props {
@@ -14,14 +16,61 @@ const LotCard: FC<Props> = ({
     lot,
 }) => {
     const [timer, setTimer] = useState<number>(lot.timeToEnd)
+    const [isInFavorites, setIsInfavorites] = useState<boolean>(lot.isInFavorites)
+
+    const {
+        token,
+    } = useUserContext()
+
+    const navigate = useNavigate()
+
+    const toggleAddToFavorites = async () => {
+        if (!token) {
+            navigate('/login')
+            return
+        }
+
+        const isSuccess = await AuctionService.toggleAddToFavorites(
+            lot.id,
+            token,
+        )
+
+        if (isSuccess) {
+            setIsInfavorites(prev => !prev)
+        }
+    }
 
     return (
-        <Link className={styles.lotCard} to={`/lot/${lot.id}`}>
-            <div className={styles.imgContainer}>
-                <img className={styles.img} src={lot.image} alt="lot image" loading="lazy" />
-            </div>
+        <div className={styles.lotCard}>
+            <Link
+                to={`/lot/${lot.id}`}
+                className={styles.imgContainer}
+            >
+                <img
+                    className={styles.img}
+                    src={lot.image}
+                    alt="lot image"
+                    loading="lazy"
+                />
+            </Link>
+            
+            <div className={styles.titleHeartContainer}>
+                <Link to={`/lot/${lot.id}`}>
+                    <span className={styles.title}>{lot.title}</span>
+                </Link>
 
-            <span className={styles.title}>{lot.title}</span>
+                <img
+                    src={
+                        isInFavorites
+                            ? "active_heart.png"
+                            : "inactive_heart.png"
+                    }
+                    alt="add to favorites button"
+                    className={styles.toggleAddToFavorites}
+                    onClick={toggleAddToFavorites}
+                    draggable="false"
+                />
+            </div>
 
             <span className={styles.currentBidText}>
                 {timer ? (<>Текущая ставка</>) : (<>Финальная ставка</>)}
@@ -38,7 +87,7 @@ const LotCard: FC<Props> = ({
                     className={styles.timer}
                 />
             )}
-        </Link>
+        </div>
     )
 }
 
