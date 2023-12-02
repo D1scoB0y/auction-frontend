@@ -8,6 +8,7 @@ const ResetPasswordButton = () => {
     return (
         <Link
             to="/reset-password-step-1"
+            rel="nofollow"
             className={styles.resetPasswordButton}
         >
             Сброс пароля

@@ -49,6 +49,7 @@ const UserMenu: FC<Props> = ({
                     {user?.isSeller && (
                         <Link
                             to='/lots'
+                            rel="nofollow"
                             className={styles.menuOption}
                             onClick={() => {
                                 close()
@@ -61,6 +62,7 @@ const UserMenu: FC<Props> = ({
                     {user?.isSeller && (
                         <Link
                             to='/ended-lots'
+                            rel="nofollow"
                             className={styles.menuOption}
                             onClick={() => {
                                 close()
@@ -72,6 +74,7 @@ const UserMenu: FC<Props> = ({
 
                     <Link
                         to='/bids'
+                        rel="nofollow"
                         className={styles.menuOption}
                         onClick={() => {
                             close()
@@ -82,6 +85,7 @@ const UserMenu: FC<Props> = ({
 
                     <Link
                         to="/settings"
+                        rel="nofollow"
                         className={styles.menuOption}
                         onClick={() => {
                             close()
@@ -92,6 +96,7 @@ const UserMenu: FC<Props> = ({
 
                     <Link
                         to="/"
+                        rel="nofollow"
                         className={styles.exitOption}
                         onClick={() => {
                             logout()

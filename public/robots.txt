@@ -1,0 +1,16 @@
+User Agent: *
+Disallow: /lots
+Disallow: /create-lot
+Disallow: /bids
+Disallow: /settings
+Disallow: /ended-lots
+Disallow: /ended-lot/*
+Disallow: /reset-password-step-1
+Disallow: /reset-password-step-2
+Disallow: /email-verification
+Disallow: /change-password
+Disallow: /phone-verification
+
+Sitemap: https://fotojager.ru/sitemap.xml
+
+Host: fotojager.ru
