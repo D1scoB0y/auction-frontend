@@ -39,6 +39,7 @@ const App = () => {
                     <Route path="/lot/:id" element={<LotPage />} />
                     <Route path="/how-it-works" element={<HowItWorks />} />
                     <Route path="/privacy-policy" element={<>Политика конфиденциальности находится в разработке</>} />
+                    <Route path="*" element={<>404 not found</>} />
                     <Route element={<UnauthorizedOnly />}>
                         <Route path="/login" element={<Login />} />
                         <Route path="/registration" element={<Registration />} />
