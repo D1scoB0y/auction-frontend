@@ -9,7 +9,7 @@ import BetaTestingBadge from "../../UI/BetaTestingBadge/BetaTestingBadge"
 import { useUserContext } from "../../context/UserContext"
 
 
-const LOTS_PER_PAGE = 15
+const LOTS_PER_PAGE = 18
 
 const Home = () => {
     const [lots, setLots] = useState<LotPreview[] | null>(null)

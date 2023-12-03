@@ -1,0 +1,25 @@
+.agreement{
+    margin-top: 12px;
+}
+
+.text{
+    width: 100%;
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted-text);
+    text-align: justify;
+}
+
+.details{
+    margin-right: auto;
+    margin-top: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--blue);
+}
+
+.details:hover{
+    color: var(--hovered-blue);
+    text-decoration: underline;
+}

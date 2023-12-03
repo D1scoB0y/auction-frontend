@@ -27,6 +27,7 @@ const Bids = lazy(() => import("./pages/Bids/Bids"))
 const EndedLots = lazy(() => import("./pages/EndedLots/EndedLots"))
 const EndedLot = lazy(() => import("./pages/EndedLot/EndedLot"))
 const HowItWorks = lazy(() => import("./pages/HowItWorks/HowItWorks"))
+const FavoritesPage = lazy(() => import("./pages/FavoritesPage/FavoritesPage"))
 
 
 const App = () => {
@@ -37,6 +38,7 @@ const App = () => {
                     <Route path="/" element={<Home />} />
                     <Route path="/lot/:id" element={<LotPage />} />
                     <Route path="/how-it-works" element={<HowItWorks />} />
+                    <Route path="/privacy-policy" element={<>Политика конфиденциальности находится в разработке</>} />
                     <Route element={<UnauthorizedOnly />}>
                         <Route path="/login" element={<Login />} />
                         <Route path="/registration" element={<Registration />} />
@@ -48,6 +50,7 @@ const App = () => {
                         <Route path="/email-verification" element={<EmailVerification />} />
                         <Route path="/change-password" element={<ChangePassword />} />
                         <Route path="/phone-verification" element={<PhoneVerification />} />
+                        <Route path="/favorites" element={<FavoritesPage />} />
                         <Route path="/bids" element={<Bids />} />
                         <Route element={<SellersOnly />}>
                             <Route path="/lots" element={<Lots />} />

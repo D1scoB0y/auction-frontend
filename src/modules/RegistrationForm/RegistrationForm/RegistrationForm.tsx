@@ -14,6 +14,7 @@ import { useSnackbarContext } from '../../../context/SnackbarContext'
 import { decodeBase64 } from '../../../helpers/decodeBase64'
 import SignInHint from '../components/SignInHint/SignInHint'
 import Form from '../../../UI/Form/Form'
+import Agreement from '../components/Agreement/Agreement'
 
 
 interface FormData {
@@ -204,6 +205,7 @@ const RegistrationForm = () => {
                 isLoading={isLoading}
                 style={{marginTop: 32}}
             />
+            <Agreement />
             <SignInHint />
         </Form>
     )

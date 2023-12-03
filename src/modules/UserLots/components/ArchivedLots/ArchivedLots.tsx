@@ -41,7 +41,7 @@ const ArchivedLots: FC<Props> = ({
                 <Pagination
                         currentPage={page}
                         onPageChange={setPage}
-                        totalPages={Math.ceil(lotsQty / 15)}
+                        totalPages={Math.ceil(lotsQty / 18)}
                 />
             </>
         ) : (

@@ -9,9 +9,6 @@
     height: 100%;
     padding: 24px 20px;
     margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
 .footerSection{
@@ -29,14 +26,10 @@
     margin-top: 12px;
 }
 
-.copyright{
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--muted-text);
-}
-
-.supportContainer{
-    margin-top: 14px;
+.supportCopyContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .support{
@@ -53,6 +46,12 @@
     font-weight: 500;
     color: var(--muted-text);
     text-decoration: underline;
+}
+
+.copyright{
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--muted-text);
 }
 
 @media screen and (min-width: 480px) {

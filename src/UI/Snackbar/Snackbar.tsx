@@ -20,7 +20,7 @@ const Snackbar = forwardRef(({}, ref) => {
 
             setIsActive(true)
 
-            setTimeout(() => setIsActive(false), 4000)
+            setTimeout(() => setIsActive(false), 3000)
         },
     }))
 
@@ -29,7 +29,6 @@ const Snackbar = forwardRef(({}, ref) => {
             className={clsx(
                 styles.snackbar,
                 isActive && styles.active,
-                type === 'success' ? styles.success : styles.fail,
             )}
         >
             <img
@@ -38,21 +37,7 @@ const Snackbar = forwardRef(({}, ref) => {
                 alt="cross icon"
             />
 
-            <span
-                className={clsx(
-                    styles.text,
-                    type === 'success' ? styles.successText : styles.failText,
-                )}
-            >
-                {text}
-            </span>
-
-            <img
-                className={styles.crossIcon}
-                src="/cancel.png"
-                alt="cross icon"
-                onClick={() => setIsActive(false)}
-            />
+            <span className={styles.text}>{text}</span>
         </div>
     )
 })

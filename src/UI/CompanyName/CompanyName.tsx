@@ -5,7 +5,7 @@ import styles from './CompanyName.module.css'
 
 const CompanyName = () => {
     return (
-        <Link to="/">
+        <Link to="/" title="Главная">
             <div className={styles.companyNameBox}>
                 <h1 className={styles.companyName}>FotoJäger`s</h1>
                 <span className={styles.auctionsWord}>AUCTIONS</span>

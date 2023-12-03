@@ -61,7 +61,7 @@ const UserMenu: FC<Props> = ({
 
                     {user?.isSeller && (
                         <Link
-                            to='/ended-lots'
+                            to="/ended-lots"
                             rel="nofollow"
                             className={styles.menuOption}
                             onClick={() => {
@@ -73,7 +73,7 @@ const UserMenu: FC<Props> = ({
                     )}
 
                     <Link
-                        to='/bids'
+                        to="/bids"
                         rel="nofollow"
                         className={styles.menuOption}
                         onClick={() => {
@@ -81,6 +81,17 @@ const UserMenu: FC<Props> = ({
                         }}
                     >
                         Ставки
+                    </Link>
+
+                    <Link
+                        to="/favorites"
+                        rel="nofollow"
+                        className={styles.menuOption}
+                        onClick={() => {
+                            close()
+                        }}
+                    >
+                        Избранное
                     </Link>
 
                     <Link

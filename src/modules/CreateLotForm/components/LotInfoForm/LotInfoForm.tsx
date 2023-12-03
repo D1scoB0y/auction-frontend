@@ -241,7 +241,7 @@ const LotInfoForm: FC<{ files: File[] }> = ({
                 value={formData.description}
                 onChange={handleDescription}
                 placeholder="Описание"
-                maxLength={500}
+                maxLength={750}
                 style={{ marginTop: 32 }}
             />
             <DateInput

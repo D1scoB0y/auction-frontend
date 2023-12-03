@@ -22,14 +22,23 @@ const Footer = () => {
                         Как это работает?
                     </Link>
 
+                    <Link
+                        to="/privacy-policy"
+                        className={styles.footerSection}
+                    >
+                        Политика конфиденциальности
+                    </Link>
+
                     <Line />
 
-                    <div className={styles.supportContainer}>
-                        <span className={styles.support}>Техподдержка:</span>
-                        <span className={styles.supportEmail}>helpfotojager@gmail.com</span>
+                    <div className={styles.supportCopyContainer}>
+                        <div className={styles.supportContainer}>
+                            <span className={styles.support}>Техподдержка:</span>
+                            <span className={styles.supportEmail}>helpfotojager@gmail.com</span>
+                        </div>
+                        <span className={styles.copyright}>© 2023</span>
                     </div>
                 </div>
-                <span className={styles.copyright}>© 2023</span>
             </div>
         </footer>
     )
