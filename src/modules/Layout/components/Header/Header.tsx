@@ -7,6 +7,7 @@ import CompanyName from '../../../../UI/CompanyName/CompanyName'
 import UserMenu from '../UserMenu/UserMenu'
 import { useUserContext } from '../../../../context/UserContext'
 import clsx from 'clsx'
+import Button from '../../../../UI/Button/Button'
 
 
 const Header = () => {
@@ -47,11 +48,11 @@ const Header = () => {
                             <span className={styles.username}>{user?.username}</span>
                         </div>
                     ) : (
-                        <Link
-                            className={styles.loginButton}
-                            to="/login"
-                        >
-                            Войти
+                        <Link to="/login">
+                            <Button
+                                text="Войти"
+                                className={styles.loginButton}
+                            />
                         </Link>
                     )}
                 </div>

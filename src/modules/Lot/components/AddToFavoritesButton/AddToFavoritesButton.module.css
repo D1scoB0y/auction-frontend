@@ -1,0 +1,42 @@
+.button{
+    display: flex;
+    margin-top: 16px;
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    padding: 4px 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted-text);
+    background: transparent;
+    cursor: pointer;
+}
+
+.heartIcon{
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.buttonActive{
+    border-color: var(--blue);
+}
+
+.animationActive{
+    animation: button-anim 0.2s 1 linear;
+}
+
+@keyframes button-anim {
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .button{
+        margin-top: 0;
+    }
+}

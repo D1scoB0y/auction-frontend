@@ -1,5 +1,6 @@
 import { memo } from 'react'
 import styles from './BetaTestingBadge.module.css'
+import CopyText from '../CopyText/CopyText'
 
 
 const BetaTestingBadge = () => {
@@ -9,7 +10,12 @@ const BetaTestingBadge = () => {
 
             <div className={styles.supportContainer}>
                 <span className={styles.support}>Техническая поддержка:</span>
-                <span className={styles.supportEmail}>helpfotojager@gmail.com</span>
+                <CopyText
+                    textToCopy='helpfotojager@gmail.com'
+                    className={styles.supportEmail}
+                >
+                    helpfotojager@gmail.com
+                </CopyText>
             </div>
         </div>
     )

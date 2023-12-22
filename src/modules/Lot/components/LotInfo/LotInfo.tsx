@@ -6,6 +6,8 @@ import Timer from "../../../../components/Timer/Timer"
 import BidForm from "../BidForm/BidForm"
 import formatPrice from "../../../../helpers/priceFormatter"
 import formatDate from "../../../../helpers/dateFormatter"
+import { useUserContext } from "../../../../context/UserContext"
+import AddToFavoritesButton from "../AddToFavoritesButton/AddToFavoritesButton"
 
 
 const LotInfo: FC<{ lot: Lot }> = ({
@@ -13,8 +15,18 @@ const LotInfo: FC<{ lot: Lot }> = ({
 }) => {
     const [timer, setTimer] = useState<number>(lot.timeToEnd)
 
+    const {
+        token,
+    } = useUserContext()
+
     return (
         <div className={styles.info}>
+            <AddToFavoritesButton
+                isActive={lot.isInFavorites}
+                token={token}
+                lotId={+lot.lotId}
+            />
+
             <span className={styles.title}>{lot.title}</span>
 
             <span className={styles.currentBid}>₽ {formatPrice(lot.currentBid)}</span>

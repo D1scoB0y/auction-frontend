@@ -4,23 +4,7 @@ import styles from './UserGuide.module.css'
 const UserGuide = () => {
     return (
         <div className={styles.guide}>
-            <h2 className={styles.h2}>1. Добро пожаловать на FotoJäger`s Auctions!</h2>
-
-            <p className={styles.par}>
-                Здесь вы найдете уникальную возможность окунуться в мир
-                раритетной фототехники и фотографии. Мы гордимся предлагать
-                вам эксклюзивные лоты, которые отражают историю и красоту
-                фотографического искусства.
-            </p>
-
-            <p className={styles.par}>
-                Присоединяйтесь к нам на этой захватывающей площадке,
-                где вы сможете отыскать настоящие сокровища и уникальные
-                экспонаты для вашей коллекции. С нетерпением ждем вас на
-                FotoJäger's Auctions!
-            </p>
-
-            <h2 className={styles.h2}>2. Создайте аккаунт</h2>
+            <h2 className={styles.h2}>1. Создайте аккаунт</h2>
 
             <p className={styles.par}>
                 Для того, чтобы получить возможность публиковать ставки
@@ -40,7 +24,7 @@ const UserGuide = () => {
                 почту.
             </p>
 
-            <h2 className={styles.h2}>3. Время делать ставки</h2>
+            <h2 className={styles.h2}>2. Время делать ставки</h2>
 
             <p className={styles.par}>
                 Время выбрать понравившийся вам лот и сделать первую ставку.
@@ -56,7 +40,7 @@ const UserGuide = () => {
                 уточнения адреса доставки.
             </p>
 
-            <h2 className={styles.h2}>4. Доставка</h2>
+            <h2 className={styles.h2}>3. Доставка</h2>
 
             <p className={styles.par}>
                 Мы отправляем товары по всей России и за границу.

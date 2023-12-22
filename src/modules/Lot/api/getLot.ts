@@ -6,11 +6,16 @@ type LotInfo = [Lot | null, Bid[] | null]
 
 const getLot = async (
     lotId: string,
+    token: string | null,
 ): Promise<LotInfo> => {
+    const headers = {
+        Authorization: 'Bearer ' + token
+    }
+
     const res = []
 
     try {
-        const lot = await client.get(`auction/lots/${lotId}`).json()
+        const lot = await client.get(`auction/lots/${lotId}`, { headers }).json()
         res.push(lot)
     } catch (e) {
         return [null, null]

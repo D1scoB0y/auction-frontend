@@ -1,9 +1,10 @@
 import { Dispatch, FC, SetStateAction, useEffect, useState } from "react"
 import { LotPreview } from "../../../../types/auction"
-import getActiveLots from "../../api/getActiveLots"
 import LotsGrid from "../../../../UI/LotsGrid/LotsGrid"
 import styles from '../../UserLots/UserLots.module.css'
 import Pagination from "../../../../components/Pagination/Pagination"
+import AuctionService from "../../../../api/AuctionService"
+import { useUserContext } from "../../../../context/UserContext"
 
 
 interface Props {
@@ -18,9 +19,13 @@ const ActiveLots: FC<Props> = ({
     const [page, setPage] = useState<number>(1)
     const [lotsQty, setLotQty] = useState<number>(0)
 
+    const {
+        token,
+    } = useUserContext()
+
     useEffect(() => {
         (async () => {
-            const res = await getActiveLots(page)
+            const res = await AuctionService.getLots(page, token as string)
 
             if (res) {
                 setLotQty(res.lotsQty)

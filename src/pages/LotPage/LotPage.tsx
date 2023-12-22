@@ -6,6 +6,7 @@ import { LotCarousel } from "../../modules/LotCarousel"
 import { MobileLotCarousel } from "../../modules/Lot"
 import { useLotStore } from "../../modules/Lot"
 import PageSpinner from "../../UI/PageSpinner/PageSpinner"
+import { useUserContext } from "../../context/UserContext"
 
 
 const LotPage = () => {
@@ -22,9 +23,13 @@ const LotPage = () => {
         fetchLot,
     } = useLotStore()
 
+    const {
+        token,
+    } = useUserContext()
+
     useEffect(() => {
         setIsLoading(true)
-        fetchLot(id)
+        fetchLot(id, token)
     }, [])
 
     useEffect(() => {

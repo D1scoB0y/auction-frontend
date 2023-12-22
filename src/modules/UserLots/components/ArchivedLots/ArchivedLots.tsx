@@ -45,7 +45,7 @@ const ArchivedLots: FC<Props> = ({
                 />
             </>
         ) : (
-            <div className={styles.noLots}>Архивных лотов пока нет</div>
+            <div className={styles.noLots}>Архивированных лотов пока нет</div>
         )
     )
 }

@@ -137,30 +137,6 @@
     .title{
         max-width: 180px;
     }
-
-    .heartContainer{
-        width: 24px;
-        height: 24px;
-        margin-right: 8px;
-        position: relative;
-        display: flex;
-        user-select: none;
-    }
-    
-    .tapEffect{
-        width: 24px;
-        height: 24px;
-        opacity: 0;
-        position: absolute;
-        user-select: none;
-        cursor: pointer;
-    }
-
-    .toggleAddToFavorites{
-        width: 24px;
-        height: 24px;
-        user-select: none;
-    }
 }
 
 @media screen and (min-width: 1024px) {

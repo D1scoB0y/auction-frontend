@@ -20,7 +20,7 @@ const Snackbar = forwardRef(({}, ref) => {
 
             setIsActive(true)
 
-            setTimeout(() => setIsActive(false), 3000)
+            setTimeout(() => setIsActive(false), 2500)
         },
     }))
 

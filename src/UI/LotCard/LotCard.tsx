@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import formatPrice from '../../helpers/priceFormatter'
 import { useUserContext } from '../../context/UserContext'
 import AuctionService from '../../api/AuctionService'
-import clsx from 'clsx'
+import HeartButton from '../HeartButton/HeartButton'
 
 
 interface Props {
@@ -18,7 +18,6 @@ const LotCard: FC<Props> = ({
 }) => {
     const [timer, setTimer] = useState<number>(lot.timeToEnd)
     const [isInFavorites, setIsInfavorites] = useState<boolean>(lot.isInFavorites)
-    const [heartAnimationActive, setHeartAnimationActive] = useState<boolean>(false)
 
     const {
         token,
@@ -31,8 +30,6 @@ const LotCard: FC<Props> = ({
             navigate('/login')
             return
         }
-
-        setHeartAnimationActive(true)
 
         const isSuccess = await AuctionService.toggleAddToFavorites(
             lot.id,
@@ -64,28 +61,11 @@ const LotCard: FC<Props> = ({
                     <span className={styles.title} title={lot.title}>{lot.title}</span>
                 </Link>
 
-                <div className={styles.heartContainer}>
-                    <img
-                        src={
-                            isInFavorites
-                                ? "active_heart.png"
-                                : "inactive_heart.png"
-                        }
-                        alt="add to favorites button"
-                        className={styles.toggleAddToFavorites}
-                        draggable="false"
-                    />
-
-                    <img
-                        src="active_heart.png"
-                        alt="add to favorites button"
-                        className={clsx(styles.tapEffect, heartAnimationActive && styles.heartAnimation)}
-                        onClick={toggleAddToFavorites}
-                        draggable="false"
-                        onAnimationEnd={() => setHeartAnimationActive(false)}
-                        title={isInFavorites ? "Удалить из избранного" : "Добавить в избранное"}
-                    />
-                </div>
+                <HeartButton
+                    isActive={isInFavorites}
+                    onClick={toggleAddToFavorites}
+                    style={{ marginRight: 8 }}
+                />
             </div>
 
             <span className={styles.currentBidText}>

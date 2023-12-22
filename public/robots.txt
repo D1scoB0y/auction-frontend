@@ -5,6 +5,7 @@ Disallow: /bids
 Disallow: /settings
 Disallow: /ended-lots
 Disallow: /ended-lot/*
+Disallow: /favorites
 Disallow: /reset-password-step-1
 Disallow: /reset-password-step-2
 Disallow: /email-verification

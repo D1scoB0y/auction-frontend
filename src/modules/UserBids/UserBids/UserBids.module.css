@@ -7,15 +7,9 @@
 }
 
 .noBids{
-    margin-top: 200px;
-
-    font-size: 24px;
-    font-weight: 400;
+    font-size: 18px;
     color: var(--muted-text);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-top: 24px;
 }
 
 @media screen and (min-width: 480px) {

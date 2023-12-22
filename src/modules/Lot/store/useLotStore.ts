@@ -6,7 +6,7 @@ import getLot from "../api/getLot"
 interface LotStore {
     lot: Lot | null
     bids: Bid[] | null
-    fetchLot: (lotId: string) => Promise<void>
+    fetchLot: (lotId: string, token: string | null) => Promise<void>
     updateCurrentBid: (
         newBid: Bid,
     ) => Promise<void>
@@ -15,9 +15,9 @@ interface LotStore {
 const useLotStore = create<LotStore>(set => ({
     lot: null,
     bids: null,
-    fetchLot: async (lotId) => {
+    fetchLot: async (lotId, token) => {
         set({ lot: null, bids: null })
-        const [lot, bids] = await getLot(lotId)
+        const [lot, bids] = await getLot(lotId, token)
         set({ lot, bids })
     },
     updateCurrentBid: async (

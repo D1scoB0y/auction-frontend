@@ -3,9 +3,9 @@
 }
 
 .title{
+    font-family: 'Lora', sans-serif;
     display: block;
-    padding-top: 24px;
-    font-family: Lora, sans-serif;
+    padding-top: 8px;
     font-size: 22px;
     line-height: 26px;
     font-weight: 500;
@@ -65,7 +65,7 @@
 }
 
 @media screen and (min-width: 768px) {
-    .title{
+    .titleContainer{
         padding-top: 0;
     }
 
@@ -73,7 +73,7 @@
         min-width: 348px;
         max-width: 348px;
         height: max-content;
-        padding: 36px 24px;
+        padding: 24px;
         border: 1px solid var(--border-color);
         border-right: 4px solid var(--blue);
     }

@@ -44,7 +44,7 @@ const EndedLots = () => {
                 />
             </>
         ) : (
-            <div className={styles.noLots}>Закрытых лотов пока нет</div>
+            <div className={styles.noLots}>Завершенных лотов пока нет</div>
         )
     )
 }

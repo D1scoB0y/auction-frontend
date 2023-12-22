@@ -8,6 +8,7 @@ export interface Lot {
     sellerId: number
     currentBid: number
     images: string[]
+    isInFavorites: boolean
 }
 
 export interface EndedLot {
