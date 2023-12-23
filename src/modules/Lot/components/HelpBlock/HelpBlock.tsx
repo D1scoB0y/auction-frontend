@@ -15,14 +15,12 @@ const HelpBlock = () => {
                 />
 
                 <CopyText
-                    textToCopy='seller@example.com'
+                    textToCopy='sashink@list.ru'
                     className={styles.email}
                 >
-                    seller@example.com
+                    sashink@list.ru
                 </CopyText>
             </div>
-
-            
         </div>
     )
 }
